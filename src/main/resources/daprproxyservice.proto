@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package dapr;
+
+option java_outer_classname = "DaprProxyProtos";
+option java_package = "com.devk.grpcdemo.service";
+option java_multiple_files = true;
+
+message KVRequest {
+    string key = 1;
+    string value = 2;
+}
+
+message PersistReply {
+    string message = 1;
+}
+
+service DaprProxyService {
+    rpc SaveKV (KVRequest) returns (PersistReply) {}
+}
