@@ -1,6 +1,6 @@
 # spring-dapr-grpc-publisher
 
-The publisher opens a redis topic "MAIN" and and sends all the data from a grpc client to this topic. All service communication is implemented with grpc.
+The publisher opens a redis topic "MAIN" and and sends all the data from a grpc client to this topic. Further it listens to the "FINISHED" topic, which is populated by the subscriber. All service communication is implemented with grpc.
 
 ## howto make it work
 
