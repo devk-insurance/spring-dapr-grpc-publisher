@@ -7,4 +7,4 @@ The publisher opens a redis stream "MAIN" and and sends all the data from a grpc
   - install and initialize Dapr
   - mvn clean package
   - dapr run --protocol grpc --app-id publisher --app-port 12301 -- java -jar dapr-publish.jar
-  - grpcurl -d '{"Foo": "Bar"}' 127.0.0.1:12301 dapr.DaprProxyService.SaveKV
+  - grpcurl -plaintext -d '{"key": "foo", "value": "bar"}' 127.0.0.1:12301 dapr.DaprProxyService.SaveKV
